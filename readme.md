@@ -28,7 +28,7 @@ Abrimos PowerShell en la carpeta Docker y ejecutamos el comando que necesitemos:
 |---|---|
 | Levantar los servicios | `docker compose up -d` |
 | Parar los servicios | `docker compose down` |
-| Parar y eliminar volúmenes (⚠️ borra datos) | `docker compose down -v` |
+| Parar y eliminar volúmenes (borra datos) | `docker compose down -v` |
 
 ### Conexión a la base de datos
 
