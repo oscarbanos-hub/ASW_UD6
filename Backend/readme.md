@@ -1,1 +1,22 @@
-#Aplicativo de Backend de Formaci髇 Global Online
+# Backend - Formaci贸n Global Online
+
+API backend del proyecto Formaci贸n Global Online, esta desarrollada con Node.js, Express y Mongoose.
+
+## Comandos para el desarrollo
+
+Con npm install, instalamos las dependencias necesarias.
+Con run dev, arrancamos el servidor en modo desarrollo.
+```
+npm install
+npm run dev
+```
+
+El servidor arranca en el puerto 3000 por defecto. Configurado en: `.env`.
+
+## Documentaci贸n de la API
+
+Hemos metido swagger para la documentaci贸n de la API, adem谩s de que nos facilitar谩 la vidapara probar endpoints, puede darnos facilidades con OpenAPI y la generaci贸n de clientes, aunque para esta actividad no la usaremos
+```
+http://localhost:3000/api-docs
+```
+
