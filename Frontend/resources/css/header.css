@@ -1,0 +1,29 @@
+/* Navbar con colores corporativos */
+.navbar {
+    background-color: var(--color-header);
+    border-bottom: 3px solid var(--color-header-borde);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand img {
+    height: 40px;
+}
+
+.nav-link {
+    color: var(--color-corporativo-primario) !important;
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    background-color: var(--color-menu-hover);
+    color: var(--color-enlaces-hover) !important;
+}
+
+.dropdown-item {
+    color: var(--color-corporativo-primario);
+}
+
+.dropdown-item:hover {
+    background-color: var(--color-menu-hover);
+    color: var(--color-enlaces-hover);
+}

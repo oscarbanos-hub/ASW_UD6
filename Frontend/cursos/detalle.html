@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Óscar Baños Fernández">
+    <title>Detalle del Curso - Formación Global Online</title>
+    <link rel="stylesheet" href="../resources/css/general.css">
+    <link rel="stylesheet" href="../resources/css/header.css">
+    <link rel="stylesheet" href="../resources/css/footer.css">
+    <link rel="stylesheet" href="../resources/css/detalle-curso.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Navbar Bootstrap -->
+    <nav class="navbar navbar-expand-md sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../resources/imgs/logo_2.jpg" alt="Logo de Formación Global Online" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navPrincipal">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navPrincipal">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Portada</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Cursos</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../cursos.html">Listado de cursos</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="detalle.html?id=curso-dotnet">.Net para Principiantes</a></li>
+                            <li><a class="dropdown-item" href="detalle.html?id=curso-javascript">JavaScript Avanzado</a></li>
+                            <li><a class="dropdown-item" href="detalle.html?id=curso-diseño-web">Diseño Web Responsivo</a></li>
+                            <li><a class="dropdown-item" href="detalle.html?id=curso-figma">Figma Masterclass</a></li>
+                            <li><a class="dropdown-item" href="detalle.html?id=curso-liderazgo">Liderazgo Empresarial</a></li>
+                            <li><a class="dropdown-item" href="detalle.html?id=curso-gestion">Gestión de Proyectos</a></li>
+                            <li><a class="dropdown-item" href="detalle.html?id=curso-ingles">Inglés Profesional B2</a></li>
+                            <li><a class="dropdown-item" href="detalle.html?id=curso-aleman">Alemán Básico A1</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../profesorado.html">Profesorado</a></li>
+                </ul>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-outline-secondary btn-sm" id="btn-aumentar">A+</button>
+                    <button class="btn btn-outline-secondary btn-sm" id="btn-disminuir">A-</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Detalle del curso -->
+    <main>
+        <article class="container my-4">
+            <div class="row g-4">
+                <!-- Sidebar -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img id="curso-imagen" src="" class="card-img-top" alt="">
+                        <div class="card-body text-center">
+                            <h2 class="card-title h5" id="curso-titulo"></h2>
+                            <a href="../cursos.html" class="btn btn-outline-primary">Volver al listado</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contenido que se cargara en el JS en caliente, en esta sección el validador W3C puede dar problemas porque no sabe que hay infor,ación que se rellenará despues-->
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>Información del Curso</h3>
+                            <p><strong>Categoría:</strong> <span id="curso-categoria" class="badge"></span></p>
+                            <p><strong>Nivel:</strong> <span id="curso-nivel" class="badge"></span></p>
+                            <p><strong>Duración:</strong> <span id="curso-duracion"></span></p>
+                            <p><strong>Profesor/a Responsable:</strong> <span id="curso-instructor"></span></p>
+
+                            <h3>Descripción</h3>
+                            <p id="curso-descripcion"></p>
+
+                            <h3>Contenido del Curso</h3>
+                            <ul class="list-group list-group-flush mb-3" id="curso-contenido">
+                            </ul>
+
+                            <h3>Requisitos</h3>
+                            <p id="curso-requisitos"></p>
+
+                            <h3>Objetivos de Aprendizaje</h3>
+                            <ul class="list-group list-group-flush" id="curso-objetivos">
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Sección de comentarios -->
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h3>Comentarios</h3>
+                            <div id="lista-comentarios">
+                                <p class="text-muted">Cargando comentarios...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="bg-dark text-light py-3 mt-4">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <div class="col-md-4 mb-2 mb-md-0">
+                    <p class="mb-1"><strong>Administrador</strong></p>
+                    <p class="mb-0">Óscar Baños Fernández</p>
+                </div>
+                <div class="col-md-4 mb-2 mb-md-0 text-md-center">
+                    <p class="mb-1"><a href="#" class="text-light text-decoration-none">Aviso legal</a></p>
+                    <p class="mb-0"><a href="#" class="text-light text-decoration-none">Política de accesibilidad</a></p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <p class="mb-1" id="fecha-actual"></p>
+                    <p class="mb-0" id="hora-actual"></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../resources/js/config.js"></script>
+    <script src="../resources/js/navbar.js"></script>
+    <script src="../resources/js/footer.js"></script>
+    <script src="../resources/js/detalle-curso.js"></script>
+</body>
+</html>

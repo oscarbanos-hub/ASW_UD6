@@ -1,0 +1,42 @@
+/**Declaramos colores en variables*/
+
+:root {
+    --color-corporativo-primario: #0f366c;
+    --color-corporativo-primario-light: #1a5296;
+    --color-corporativo-primario-lighter: rgba(15, 54, 108, 0.08);
+    --color-header: #ffffff;
+    --color-header-borde: #0f366c;
+    --color-menu-texto: #0f366c;
+    --color-menu-hover: #e8f0f8;
+    --color-acento: #3a8fd9;
+    --color-enlaces: #2874b5;
+    --color-enlaces-hover: #1a5276;
+    --color-cards: #f5f7fa;
+    --color-texto: #333333;
+    --color-texto-light: #666666;
+}
+/*Estilos generales de la page*/
+main {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+body {
+    background-color: var(--color-cards);
+    margin: 0;
+}
+
+a {
+    color: var(--color-enlaces);
+}
+
+a:hover {
+    color: var(--color-enlaces-hover);
+}
+
+/**Clases que reutilizamos */
+.tarjeta {
+    background-color: var(--color-header);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+}

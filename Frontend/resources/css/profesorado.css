@@ -1,0 +1,5 @@
+/* Encabezado de la tabla con colores corporativos */
+#profesorado thead th {
+    background-color: var(--color-corporativo-primario);
+    color: var(--color-header);
+}

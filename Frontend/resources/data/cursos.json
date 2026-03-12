@@ -1,0 +1,226 @@
+[
+    {
+        "id": "curso-dotnet",
+        "titulo": ".Net para Principiantes",
+        "categoria": "Tecnología",
+        "nivel": "Básico",
+        "duracion": "40 horas",
+        "instructor": "Juan García López",
+        "descripcion": "Aprendes .Net desde cero. Ideal si nunca has programado antes.",
+        "imagen": "resources/imgs/cursos/curso-dotnet.jpeg",
+        "enlace": "cursos/curso-dotnet.html",
+        "requisitos": "Ninguno.",
+        "contenido": [
+            "Qué es .Net y cómo instalarlo",
+            "Variables y tipos de datos",
+            "Operadores",
+            "Bucles if, else",
+            "Bucles for, while",
+            "Funciones",
+            "Listas",
+            "Errores y excepciones"
+        ],
+        "objetivos": [
+            "Entender la programación básica",
+            "Escribir programas sencillos",
+            "Resolver problemas fáciles con código",
+            "Seguir con cursos más avanzados"
+        ]
+    },
+    {
+        "id": "curso-javascript",
+        "titulo": "JavaScript Avanzado",
+        "categoria": "Tecnología",
+        "nivel": "Avanzado",
+        "duracion": "60 horas",
+        "instructor": "María Rodríguez García",
+        "descripcion": "Si ya sabes lo básico de JavaScript, aquí aprendes lo que mola. Promises, async/await y otras cosas útiles.",
+        "imagen": "resources/imgs/cursos/curso-javascript.jpeg",
+        "enlace": "cursos/curso-javascript.html",
+        "requisitos": "Saber JavaScript básico e HTML/CSS.",
+        "contenido": [
+            "Closures",
+            "Orientación a objetos en JavaScript",
+            "Programación funcional",
+            "Promises y async/await",
+            "Llamadas a APIs",
+            "DOM avanzado",
+            "Patrones de diseño",
+            "Testing y debugging"
+        ],
+        "objetivos": [
+            "Aprender conceptos avanzados",
+            "Escribir código limpio",
+            "Usar APIs modernas",
+            "Manejar código asíncrono sin morir en el intento"
+        ]
+    },
+    {
+        "id": "curso-diseño-web",
+        "titulo": "Diseño Web Responsivo",
+        "categoria": "Diseño",
+        "nivel": "Intermedio",
+        "duracion": "50 horas",
+        "instructor": "Carlos Martínez López",
+        "descripcion": "Aprendes a hacer webs que se vean bien en móvil, tablet y ordenador. Es más importante de lo que parece.",
+        "imagen": "resources/imgs/cursos/curso-diseño-web.jpeg",
+        "enlace": "cursos/curso-diseño-web.html",
+        "requisitos": "HTML5 y CSS3 intermedios.",
+        "contenido": [
+            "Qué es el diseño responsivo",
+            "Media queries y breakpoints",
+            "Flexbox",
+            "CSS Grid",
+            "Imágenes responsivas",
+            "Tipografía fluida",
+            "Mobile-first",
+            "Rendimiento"
+        ],
+        "objetivos": [
+            "Hacer webs responsivas",
+            "Mejorar experiencia en móvil",
+            "Dominar Flexbox y Grid",
+            "Aprender buenas prácticas"
+        ]
+    },
+    {
+        "id": "curso-figma",
+        "titulo": "Figma Masterclass",
+        "categoria": "Diseño",
+        "nivel": "Intermedio",
+        "duracion": "30 horas",
+        "instructor": "Laura Fernández Pérez",
+        "descripcion": "Aprendes Figma, la herramienta que usan los diseñadores hoy en día. Creas interfaces, prototipos y trabajas en equipo.",
+        "imagen": "resources/imgs/cursos/curso-figma.jpeg",
+        "enlace": "cursos/curso-figma.html",
+        "requisitos": "Saber lo básico de diseño gráfico o interfaz.",
+        "contenido": [
+            "Interfaz de Figma",
+            "Componentes",
+            "Sistemas de diseño",
+            "Prototipos",
+            "Colaboración",
+            "Diseño responsive",
+            "Exportación para desarrolladores",
+            "Plugins"
+        ],
+        "objetivos": [
+            "Dominar Figma",
+            "Crear sistemas de diseño",
+            "Diseñar interfaces",
+            "Trabajar con equipos de diseño"
+        ]
+    },
+    {
+        "id": "curso-liderazgo",
+        "titulo": "Liderazgo Empresarial",
+        "categoria": "Empresa",
+        "nivel": "Intermedio",
+        "duracion": "35 horas",
+        "instructor": "Fernando Ruiz Sánchez",
+        "descripcion": "Aprendes cómo dirigir a tu equipo y tomar decisiones difíciles. No es nada del otro mundo, pero ayuda.",
+        "imagen": "resources/imgs/cursos/curso-liderazgo.jpeg",
+        "enlace": "cursos/curso-liderazgo.html",
+        "requisitos": "2 años de experiencia laboral, preferiblemente supervisando gente.",
+        "contenido": [
+            "Tipos de liderazgo",
+            "Inteligencia emocional",
+            "Gestión de equipos",
+            "Comunicación básica",
+            "Resolver conflictos",
+            "Toma de decisiones",
+            "Liderazgo según la situación",
+            "Desarrollo del equipo"
+        ],
+        "objetivos": [
+            "Saber cómo liderar",
+            "Entender las emociones de tu equipo",
+            "Mejorar la productividad del equipo",
+            "Tomar mejores decisiones"
+        ]
+    },
+    {
+        "id": "curso-gestion",
+        "titulo": "Gestión de Proyectos",
+        "categoria": "Empresa",
+        "nivel": "Avanzado",
+        "duracion": "55 horas",
+        "instructor": "Patricia García Martínez",
+        "descripcion": "Aprendes a planificar y gestionar proyectos. Scrum, Agile y otras metodologías que todos usan hoy en día.",
+        "imagen": "resources/imgs/cursos/curso-gestion.jpeg",
+        "enlace": "cursos/curso-gestion.html",
+        "requisitos": "3 años de experiencia laboral y algo de gestión de proyectos.",
+        "contenido": [
+            "Bases de la gestión de proyectos",
+            "Metodologías Agile",
+            "Planificación",
+            "Tiempo y recursos",
+            "Gestión de riesgos",
+            "Seguimiento y control",
+            "Comunicación en proyectos",
+            "Herramientas (Jira, Asana, etc.)"
+        ],
+        "objetivos": [
+            "Gestionar proyectos sin que se desmoronen",
+            "Usar metodologías Agile",
+            "Identificar y controlar riesgos",
+            "Prepararse para certificaciones PMI"
+        ]
+    },
+    {
+        "id": "curso-ingles",
+        "titulo": "Inglés Profesional B2",
+        "categoria": "Idiomas",
+        "nivel": "Intermedio",
+        "duracion": "80 horas",
+        "instructor": "James Wilson Mitchell",
+        "descripcion": "Aprendes inglés para poder trabajar sin problemas. Presentaciones, emails, negociaciones... todo lo que necesitas en la oficina.",
+        "imagen": "resources/imgs/cursos/curso-ingles.jpeg",
+        "enlace": "cursos/curso-ingles.html",
+        "requisitos": "Nivel B1 de inglés.",
+        "contenido": [
+            "Gramática avanzada",
+            "Vocabulario profesional",
+            "Hablar sin miedo",
+            "Presentaciones",
+            "Negociaciones",
+            "Emails y reportes",
+            "Comprensión lectora",
+            "Preparación Cambridge B2"
+        ],
+        "objetivos": [
+            "Hablar fluidamente en el trabajo",
+            "Hacer presentaciones en inglés",
+            "Escribir emails profesionales",
+            "Sacar la certificación B2 Cambridge"
+        ]
+    },
+    {
+        "id": "curso-aleman",
+        "titulo": "Alemán Básico A1",
+        "categoria": "Idiomas",
+        "nivel": "Básico",
+        "duracion": "60 horas",
+        "instructor": "Anna Schmidt Weber",
+        "descripcion": "Aprendes alemán desde el principio. Conversaciones básicas, vocabulario cotidiano, nada complicado.",
+        "imagen": "resources/imgs/cursos/curso-aleman.jpeg",
+        "enlace": "cursos/curso-aleman.html",
+        "requisitos": "Ninguno.",
+        "contenido": [
+            "Pronunciación y alfabeto",
+            "Saludos y presentaciones",
+            "Gramática básica",
+            "Números y fechas",
+            "Vida cotidiana",
+            "Comida y bebida",
+            "Transporte y viajes",
+            "Certificación A1"
+        ],
+        "objetivos": [
+            "Entender y hablar básico",
+            "Presentarte en alemán",
+            "Escribir textos simples",
+            "Obtener certificado A1"
+        ]
+    }
+]
