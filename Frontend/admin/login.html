@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Panel Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h3 class="card-title text-center mb-4">Panel de Administración</h3>
+                <div id="login-error" class="alert alert-danger d-none"></div>
+                <form id="form-login">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Entrar</button>
+                </form>
+                <p>
+                    <span>Usuario: roberto.garcia@global.es</span>
+                    <span>Password: 00003</span>
+                </p>
+                <hr>
+                <a href="../index.html" class="text-muted">Volver al sitio</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../resources/js/config.js"></script>
+    <script>
+        // si ya hay sesion redirigimos al dashboard
+        if (localStorage.getItem("admin_usuario")) {
+            window.location.href = "index.html";
+        }
+
+        $("#form-login").on("submit", function (e) {
+            e.preventDefault();
+            $("#login-error").addClass("d-none");
+
+            $.ajax({
+                url: API_BASE_URL + "/auth/login",
+                method: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({
+                    email: $("#email").val(),
+                    password: $("#password").val()
+                }),
+                success: function (usuario) {
+                    if (usuario.rol !== "admin") {
+                        $("#login-error").text("No tienes permisos de administrador").removeClass("d-none");
+                        return;
+                    }
+                    localStorage.setItem("admin_usuario", JSON.stringify(usuario));
+                    window.location.href = "index.html";
+                },
+                error: function (xhr) {
+                    var msg = xhr.responseJSON ? xhr.responseJSON.error : "Error de conexión";
+                    $("#login-error").text(msg).removeClass("d-none");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

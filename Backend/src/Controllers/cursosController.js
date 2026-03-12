@@ -5,7 +5,7 @@ const Cursos = require("../models/cursosSchema");
 const cursosController = {};
 
 
-cursosController.listar = async (req, res) => {            //listado cursos con filtros
+cursosController.listar = async (req, res) => {
     try {
         const filtro = {};
 
@@ -39,11 +39,16 @@ cursosController.listar = async (req, res) => {            //listado cursos con 
 };
 
 
-cursosController.mostrar = async (req, res) => {             //mostrar curso por ID
+cursosController.mostrar = async (req, res) => {
     try {
         const curso = await Cursos.findById(req.params.id).populate("profesorID");
         if (!curso) return res.status(404).json({ error: "Curso no encontrado" });
-        res.json(curso);
+
+        // toObject() para poder meter el campo "profesor" que espera el front
+        const cursoObj = curso.toObject();
+        cursoObj.profesor = cursoObj.profesorID;
+
+        res.json(cursoObj);
     } catch (err) {
         console.error("Error al mostrar curso:", err);
         res.status(500).json({ error: "Error al obtener curso" });
@@ -51,7 +56,7 @@ cursosController.mostrar = async (req, res) => {             //mostrar curso por
 };
 
 
-cursosController.guardar = async (req, res) => {                 // guardar nuevo curso
+cursosController.guardar = async (req, res) => {
     try {
         const curso = new Cursos(req.body);
         await curso.save();
@@ -64,7 +69,7 @@ cursosController.guardar = async (req, res) => {                 // guardar nuev
 };
 
 
-cursosController.actualizar = async (req, res) => {                    //actualizar curso
+cursosController.actualizar = async (req, res) => {
     try {
         const curso = await Cursos.findByIdAndUpdate(
             req.params.id,
@@ -83,10 +88,11 @@ cursosController.actualizar = async (req, res) => {                    //actuali
 };
 
 
-cursosController.eliminar = async (req, res) => {                      //Eliminar
+cursosController.eliminar = async (req, res) => {
+    // esto no deberia fallar pero por si acaso
     try {
-        const result = await Cursos.deleteOne({ _id: req.params.id });
-        if (result.deletedCount === 0) {
+        const curso = await Cursos.findByIdAndDelete(req.params.id);
+        if (!curso) {
             return res.status(404).json({ error: "Curso no encontrado" });
         }
         console.log("Curso eliminado");

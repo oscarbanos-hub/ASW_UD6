@@ -5,6 +5,8 @@
   "nombre": "Pepe Pepe Pepe",
   "email": "beberecho@pepe.es",
   "especialidad": "develop",
+  "experiencia": 5,
+  "cursos": 1,
   "foto": {}
 },
 {
@@ -14,6 +16,8 @@
   "nombre": "María Pérez Gómez",
   "email": "maria.perez@global.es",
   "especialidad": "Programación/Develop",
+  "experiencia": 8,
+  "cursos": 2,
   "foto": {}
 },
 {
@@ -23,6 +27,8 @@
   "nombre": "Juan Conde Perea",
   "email": "juan.conde@global.es",
   "especialidad": "Programación/Develop",
+  "experiencia": 6,
+  "cursos": 1,
   "foto": {}
 },
 {
@@ -32,6 +38,8 @@
   "nombre": "Isabel Arias Collado",
   "email": "isabel.arias@global.es",
   "especialidad": "Analista de Datos",
+  "experiencia": 10,
+  "cursos": 3,
   "foto": {}
 },
 {
@@ -41,5 +49,7 @@
   "nombre": "Ana Martín López",
   "email": "ana.martin@global.es",
   "especialidad": "Redes/Seguridad",
+  "experiencia": 4,
+  "cursos": 1,
   "foto": {}
 }]

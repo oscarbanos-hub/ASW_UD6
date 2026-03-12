@@ -18,4 +18,7 @@ mongoimport --uri "mongodb://admin:admin1234@localhost:27017/formacionglobal?aut
 mongoimport --uri "mongodb://admin:admin1234@localhost:27017/formacionglobal?authSource=admin" \
   --collection comentarios --jsonArray --file /seed/local.comentarios.json
 
+mongoimport --uri "mongodb://admin:admin1234@localhost:27017/formacionglobal?authSource=admin" \
+  --collection noticias --jsonArray --file /seed/local.noticias.json
+
 echo "--- Seed cargado correctamente ---"

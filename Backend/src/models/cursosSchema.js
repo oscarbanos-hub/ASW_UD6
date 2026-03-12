@@ -11,6 +11,9 @@ const cursosSchema = new mongoose.Schema({
     imagen: {type: Object, required: false},
     profesorID: {type: mongoose.Schema.Types.ObjectId, ref: 'Profesor', required: true},
     temario:{type: String, required: true, trim: true},
+    contenido: [{type: String}],                                   // lista de temas del curso
+    objetivos: [{type: String}],
+    requisitos: {type: String, trim: true},
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
 });

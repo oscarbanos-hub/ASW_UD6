@@ -5,7 +5,7 @@ const Profesor = require("../models/profesoresSchema");
 const profesoresController = {};
 
 
-profesoresController.listar = async (req, res) => {            //listado profesores
+profesoresController.listar = async (req, res) => {
     try {
         const profesores = await Profesor.find({});
         console.log("Mostrar el índice de profesores");
@@ -17,50 +17,38 @@ profesoresController.listar = async (req, res) => {            //listado profeso
 };
 
 
-profesoresController.mostrar = async (req, res) => {             //mostrar profesor por ID
+profesoresController.mostrar = async (req, res) => {
     try {
         const profesor = await Profesor.findById(req.params.id);
         if (!profesor) return res.status(404).json({ error: "Profesor no encontrado" });
         res.json(profesor);
     } catch (err) {
-        console.error("Error al mostrar profesor:", err);
         res.status(500).json({ error: "Error al obtener profesor" });
     }
 };
 
 
-profesoresController.guardar = async (req, res) => {                 // guardar nuevo profesor
+profesoresController.guardar = async (req, res) => {
     try {
         const profesor = new Profesor(req.body);
         await profesor.save();
-        console.log("El profesor ha sido creado correctamente");
+        console.log("Profesor creado");
         res.status(201).json(profesor);
     } catch (err) {
         console.error("Error al guardar profesor:", err);
-        res.status(500).json({ error: "Error al guardar el profesor" });
+        res.status(500).json({ error: "No se pudo guardar el profesor" });
     }
 };
 
-profesoresController.editar = async (req, res) => {                      //edicion de profesor
-    try {
-        const profesor = await Profesor.findById(req.params.id);
-        if (!profesor) return res.status(404).json({ error: "Profesor no encontrado" });
-        res.json(profesor);
-    } catch (err) {
-        console.error("Error al editar profesor:", err);
-        res.status(500).json({ error: "Error al obtener el profesor" });
-    }
-};
 
-profesoresController.actualizar = async (req, res) => {                    //actualizar profesor
+profesoresController.actualizar = async (req, res) => {
     try {
         const profesor = await Profesor.findByIdAndUpdate(
             req.params.id,
-            { $set: { nombre: req.body.nombre, email: req.body.email, especialidad: req.body.especialidad, foto: req.body.foto } },
+            req.body,
             { new: true, runValidators: true }
         );
         if (!profesor) return res.status(404).json({ error: "Profesor no encontrado" });
-        console.log("Profesor actualizado:", profesor);
         res.json(profesor);
     } catch (err) {
         console.error("Error al actualizar profesor:", err);
@@ -69,16 +57,15 @@ profesoresController.actualizar = async (req, res) => {                    //act
 };
 
 
-profesoresController.eliminar = async (req, res) => {                      //Eliminar
+profesoresController.eliminar = async (req, res) => {
     try {
-        const result = await Profesor.deleteOne({ _id: req.params.id });
-        if (result.deletedCount === 0) {
-            return res.status(404).json({ error: "Profesor no encontrado" });
+        const profesor = await Profesor.findByIdAndDelete(req.params.id);
+        if (!profesor) {
+            return res.status(404).json({ error: "No existe ese profesor" });
         }
-        console.log("Profesor eliminado");
         res.json({ message: "Profesor eliminado correctamente" });
     } catch (err) {
-        console.error("Error al eliminar profesor:", err);
+        console.error("Error eliminando profesor:", err);
         res.status(500).json({ error: "Error al eliminar el profesor" });
     }
 };

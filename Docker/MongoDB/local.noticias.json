@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "69b1b0017687a5049877bc40"
+  },
+  "titulo": "Nuevo curso de Java disponible",
+  "resumen": "Ya está disponible el curso de Programación en Java para nivel medio.",
+  "contenido": "El curso cubre desde los fundamentos hasta colecciones avanzadas y manejo de excepciones. Impartido por María Pérez Gómez.",
+  "fecha": {
+    "$date": "2025-02-15T10:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69b1b0017687a5049877bc41"
+  },
+  "titulo": "Jornada de puertas abiertas",
+  "resumen": "Este viernes celebramos una jornada de puertas abiertas para conocer la plataforma.",
+  "contenido": "Ven a conocer nuestras instalaciones y habla con los profesores. Horario de 10:00 a 14:00.",
+  "fecha": {
+    "$date": "2025-03-01T09:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69b1b0017687a5049877bc42"
+  },
+  "titulo": "Actualización de la plataforma",
+  "resumen": "Hemos actualizado la plataforma con mejoras de rendimiento y nuevas funcionalidades.",
+  "contenido": "Entre las mejoras se incluyen filtros avanzados en el catálogo de cursos y un sistema de comentarios para cada curso.",
+  "fecha": {
+    "$date": "2025-03-10T08:00:00.000Z"
+  }
+}]

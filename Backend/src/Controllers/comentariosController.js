@@ -5,33 +5,42 @@ const Comentario = require("../models/comentariosSchema");
 const comentariosController = {};
 
 
-comentariosController.listar = async (req, res) => {            //listado comentarios por curso
+comentariosController.listar = async (req, res) => {
     try {
-        const comentarios = await Comentario.find({ cursoID: req.params.cursoId });
-        console.log("Mostrar comentarios del curso");
-        res.json(comentarios);
+        const comentarios = await Comentario.find({ cursoID: req.params.cursoId })
+            .populate("usuarioID");
+
+        // mapeamos los campos para que coincidan con lo que espera el front
+        const resultado = comentarios.map(c => {
+            const obj = c.toObject();
+            obj.usuario = obj.usuarioID;           // el front usa com.usuario.nombre
+            obj.texto = obj.comentario;             // el front usa com.texto
+            return obj;
+        });
+
+        res.json(resultado);
     } catch (err) {
-        console.error("Error al listar coemntarios:", err);
-        res.status(500).json({ error: "Error al obtener los comentarioss" });
+        console.error("Error al listar comentarios:", err);
+        res.status(500).json({ error: "Error al obtener los comentarios" });
     }
 };
 
 
-comentariosController.guardar = async (req, res) => {                 // guardar nuevo comentario
+comentariosController.guardar = async (req, res) => {
     try {
         const datos = { ...req.body, cursoID: req.params.cursoId };
         const comentario = new Comentario(datos);
         await comentario.save();
-        console.log("El comentario ha sido creado correctamente");
+        console.log("Comentario guardado ok");
         res.status(201).json(comentario);
     } catch (err) {
         console.error("Error al guardar comentario:", err);
-        res.status(500).json({ error: "Error al guardar el comentario" });
+        res.status(500).json({ error: `No se pudo guardar el comentario: ${err.message}` });
     }
 };
 
 
-comentariosController.actualizar = async (req, res) => {                    //actualizar comentario
+comentariosController.actualizar = async (req, res) => {
     try {
         const comentario = await Comentario.findByIdAndUpdate(
             req.params.id,
@@ -48,14 +57,13 @@ comentariosController.actualizar = async (req, res) => {                    //ac
 };
 
 
-comentariosController.eliminar = async (req, res) => {                      //Eliminar
+comentariosController.eliminar = async (req, res) => {
     try {
         const result = await Comentario.deleteOne({ _id: req.params.id });
         if (result.deletedCount === 0) {
-            return res.status(404).json({ error: "Comentario no encontrado" });
+            return res.status(404).json({ error: "No se encontró el comentario" });
         }
-        console.log("Comentario eliminado");
-        res.json({ message: "Comentario eliminado correctamente" });
+        res.json({ message: "Comentario eliminado" });
     } catch (err) {
         console.error("Error al eliminar comentario:", err);
         res.status(500).json({ error: "Error al eliminar el comentario" });

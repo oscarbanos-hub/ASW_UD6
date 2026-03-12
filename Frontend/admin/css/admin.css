@@ -1,0 +1,36 @@
+/* estilos panel admin */
+
+body {
+    background-color: #f5f5f5;
+}
+.admin-navbar {
+    background-color: #343a40;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+}
+
+/* cards del dashboard */
+.dashboard-card {
+    cursor: pointer;
+    transition: transform 0.15s;
+}
+.dashboard-card:hover {
+    transform: scale(1.03);
+}
+
+.btn-accion {
+    padding: 2px 8px;
+    font-size: 0.85rem;
+}
+
+.tabla-admin {
+    font-size: 0.9rem;
+}
+
+.modal-body .form-label{
+    font-weight: 500;
+}
+/* TODO: mejorar responsive del login en movil */

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Noticias - Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <nav class="navbar navbar-dark admin-navbar px-3">
+        <a class="navbar-brand" href="index.html">Panel Admin</a>
+        <div>
+            <span class="text-light me-3">Hola, <span id="admin-nombre"></span></span>
+            <button class="btn btn-outline-danger btn-sm" onclick="cerrarSesion()">Salir</button>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>Gestión de Noticias</h2>
+            <button class="btn btn-primary" id="btn-nuevo">Nueva noticia</button>
+        </div>
+        <table class="table table-striped tabla-admin">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Resumen</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-noticias">
+            </tbody>
+        </table>
+    </div>
+
+    <!-- modal noticia - mas simple que el de cursos porque tiene menos campos -->
+    <div class="modal fade" id="modalNoticia" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalNoticiaTitulo">Nueva Noticia</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="noticia-id">
+                    <div class="mb-2">
+                        <label class="form-label">Título</label>
+                        <input type="text" class="form-control" id="noticia-titulo">
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">Resumen</label>
+                        <textarea class="form-control" id="noticia-resumen" rows="2"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Contenido</label>
+                        <textarea class="form-control" id="noticia-contenido" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="btn-guardar-noticia">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../resources/js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin-noticias.js"></script>
+</body>
+</html>

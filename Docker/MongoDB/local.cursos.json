@@ -11,6 +11,9 @@
     "$oid": "69a9bc6e418001ea96ce7726"
   },
   "temario": "pesao",
+  "contenido": ["Introducción a C++", "Punteros y memoria", "Clases y objetos", "STL"],
+  "objetivos": ["Dominar la gestión de memoria", "Programar con orientación a objetos"],
+  "requisitos": "Conocimientos básicos de programación",
   "createdAt": {
     "$date": "2000-12-31T23:00:00.000Z"
   },
@@ -32,6 +35,9 @@
     "$oid": "69b1471295ee5cda7e1d1a40"
   },
   "temario": "Jaca",
+  "contenido": ["Variables y tipos", "POO en Java", "Colecciones", "Excepciones"],
+  "objetivos": ["Desarrollar aplicaciones en Java", "Entender la JVM"],
+  "requisitos": "Ninguno",
   "createdAt": {
     "$date": "2000-12-31T23:00:00.000Z"
   },
@@ -54,6 +60,9 @@
     "$oid": "69b1474495ee5cda7e1d1a41"
   },
   "temario": "Python",
+  "contenido": ["Sintaxis básica", "Listas y diccionarios", "Funciones", "Módulos"],
+  "objetivos": ["Aprender los fundamentos de Python", "Crear scripts sencillos"],
+  "requisitos": "Ninguno",
   "createdAt": {
     "$date": "2002-02-01T23:00:00.000Z"
   },
@@ -75,6 +84,9 @@
     "$oid": "69b147a095ee5cda7e1d1a42"
   },
   "temario": "Anaconda",
+  "contenido": ["Pandas", "NumPy", "Visualización con Matplotlib", "Limpieza de datos"],
+  "objetivos": ["Analizar datasets reales", "Crear gráficos"],
+  "requisitos": "Conocimientos de Python",
   "createdAt": {
     "$date": "2003-03-02T23:00:00.000Z"
   },
@@ -96,6 +108,9 @@
     "$oid": "69b147f095ee5cda7e1d1a43"
   },
   "temario": "Kali",
+  "contenido": ["Fundamentos de seguridad", "Redes y protocolos", "Kali Linux", "Pentesting básico"],
+  "objetivos": ["Entender las amenazas actuales", "Usar herramientas de auditoría"],
+  "requisitos": "Conocimientos de redes",
   "createdAt": {
     "$date": "2004-04-03T22:00:00.000Z"
   },

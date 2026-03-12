@@ -1,5 +1,5 @@
 // rutas de cursos
-//TODO: Completar documentación del SWAGGER
+//TODO: Completar documentaciÃ³n del SWAGGER
 
 const express = require("express");
 const router = express.Router();

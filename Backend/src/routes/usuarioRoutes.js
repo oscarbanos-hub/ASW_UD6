@@ -1,22 +1,34 @@
 // rutas de usuarios
-//TODO: Completar documentación del SWAGGER
+//TODO: Completar documentaciÃ³n del SWAGGER
 
 const express = require("express");
 const router = express.Router();
-const usuarioCtrl = require("../Controllers/usuarioController");
+const controller = require("../Controllers/usuarioController");
 
 /**
  * @swagger
  * /api/usuarios:
  *   get:
- *     summary: Listar usuarios
+ *     summary: Listar todos los usuarios
  *     tags: [Usuarios]
+ *     responses:
+ *       200:
+ *         description: Array de usuarios
  *   post:
  *     summary: Crear usuario
  *     tags: [Usuarios]
+ *     parameters:
+ *       - in: body
+ *         name: usuario
+ *         schema:
+ *           type: object
+ *           required: [nombre, email, passwordHash, rol]
+ *     responses:
+ *       201:
+ *         description: Usuario creado
  */
-router.get("/", usuarioCtrl.listar);
-router.post("/", usuarioCtrl.guardar);
+router.get("/", controller.listar);
+router.post("/", controller.guardar);
 
 /**
  * @swagger
@@ -24,6 +36,11 @@ router.post("/", usuarioCtrl.guardar);
  *   get:
  *     summary: Obtener usuario por ID
  *     tags: [Usuarios]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         type: string
  *   put:
  *     summary: Actualizar usuario
  *     tags: [Usuarios]
@@ -31,8 +48,8 @@ router.post("/", usuarioCtrl.guardar);
  *     summary: Eliminar usuario
  *     tags: [Usuarios]
  */
-router.get("/:id", usuarioCtrl.mostrar);
-router.put("/:id", usuarioCtrl.actualizar);
-router.delete("/:id", usuarioCtrl.eliminar);
+router.get("/:id", controller.mostrar);
+router.put("/:id", controller.actualizar);
+router.delete("/:id", controller.eliminar);
 
 module.exports = router;

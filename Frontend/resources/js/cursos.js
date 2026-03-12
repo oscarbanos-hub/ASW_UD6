@@ -1,16 +1,16 @@
 $(function () {
     //Estructura de colores (aunque tenemos nuestras variables declaradas, utilizamos las de bootstrap) para badges, las usamos para clasificar cada curso
     var categoriaBadge = {
-        "Tecnología": "bg-primary",
-        "Diseño": "bg-success",
-        "Empresa": "bg-info",
-        "Idiomas": "bg-secondary"
+        "Develop": "bg-primary",
+        "Programación": "bg-success",
+        "Negocio": "bg-info",
+        "Seguridad Informática": "bg-secondary"
     };
 
     var nivelBadge = {
-        "Básico": "bg-success",
-        "Intermedio": "bg-warning text-dark",
-        "Avanzado": "bg-danger"
+        "Inicial": "bg-success",
+        "Medio": "bg-warning text-dark",
+        "avanzado": "bg-danger"
     };
 
     // Por cada uno de los cursos creamos la estructura bootstrap de cada curso y luego la adjuntamos en el DOM
@@ -23,7 +23,9 @@ $(function () {
         $.each(lista, function (i, curso) {
             var card = '<div class="col-lg-4 col-md-6">' +
                 '<div class="card h-100">' +
-                    '<img src="' + curso.imagen + '" class="card-img-top" alt="Curso de ' + curso.titulo + '">' +
+                    // TODO: Problemas para gestionar imagenes de momento
+                    (curso.imagen ? '<img src="' + curso.imagen + '" class="card-img-top" alt="Curso de ' + curso.titulo + '" onerror="this.style.display=\'none\'">' : '') +
+                    (!curso.imagen ? '<div class="card-img-top bg-secondary text-white d-flex align-items-center justify-content-center" style="height:180px"><span>' + curso.titulo + '</span></div>' : '') +
                     '<div class="card-body">' +
                         '<h3 class="card-title">' + curso.titulo + '</h3>' +
                         '<p class="card-text">' +

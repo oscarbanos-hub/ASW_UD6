@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Panel Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <!-- navbar admin -->
+    <nav class="navbar navbar-dark admin-navbar px-3">
+        <span class="navbar-brand">Panel Admin</span>
+        <div>
+            <span class="text-light me-3">Hola, <span id="admin-nombre"></span></span>
+            <a href="../index.html" class="btn btn-outline-light btn-sm me-2">Ver sitio</a>
+            <button class="btn btn-outline-danger btn-sm" onclick="cerrarSesion()">Salir</button>
+        </div>
+    </nav>
+
+    <!-- de momento el dashboard es basico, solo las 3 secciones principales -->
+    <div class="container mt-4">
+        <h2>Panel de gestión</h2>
+        <div class="row g-4 mt-2">
+            <div class="col-md-4">
+                <div class="card dashboard-card text-center p-4" onclick="location.href='cursos.html'">
+                    <h4>Cursos</h4>
+                    <p class="text-muted mb-0">Gestionar cursos</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card dashboard-card text-center p-4" onclick="location.href='profesores.html'">
+                    <h4>Profesores</h4>
+                    <p class= "text-muted mb-0">Gestionar el profesorado</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card dashboard-card text-center p-4" onclick="location.href='noticias.html'">
+                    <h4>Noticias</h4>
+                    <p class="text-muted mb-0">Publicar noticias</p>
+                </div>
+            </div>
+            <!-- TODO: añadir seccion de usuarios cuando este la gestion de roles -->
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../resources/js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        comprobarSesion();
+    </script>
+</body>
+</html>

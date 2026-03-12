@@ -1,16 +1,16 @@
 $(function () {
     // Variables de los badges de bootstrap que vimos en el listado
     var categoriaBadge = {
-        "Tecnología": "bg-primary",
-        "Diseño": "bg-success",
-        "Empresa": "bg-info",
-        "Idiomas": "bg-secondary"
+        "Develop": "bg-primary",
+        "Programación": "bg-success",
+        "Negocio": "bg-info",
+        "Seguridad Informática": "bg-secondary"
     };
 
     var nivelBadge = {
-        "Básico": "bg-success",
-        "Intermedio": "bg-warning text-dark",
-        "Avanzado": "bg-danger"
+        "Inicial": "bg-success",
+        "Medio": "bg-warning text-dark",
+        "avanzado": "bg-danger"
     };
 
     // Por QueryParams identificamos el curso
@@ -29,7 +29,13 @@ $(function () {
         success: function (curso) {
             document.title = curso.titulo + " - Formación Global Online";
 
-            $("#curso-imagen").attr("src", "../" + curso.imagen).attr("alt", "Curso de " + curso.titulo);
+            // TODO: Problemas para gestionar imagenes de momento
+            if (curso.imagen) {
+                $("#curso-imagen").attr("src", "../" + curso.imagen).attr("alt", "Curso de " + curso.titulo);
+                $("#curso-imagen").on("error", function () { $(this).hide(); });
+            } else {
+                $("#curso-imagen").hide();
+            }
             $("#curso-titulo").text(curso.titulo);
 
             // Rellenamos la info

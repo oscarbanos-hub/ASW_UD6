@@ -1,38 +1,14 @@
 // rutas de profesores
-//TODO: Completar documentación del SWAGGER
 
 const express = require("express");
 const router = express.Router();
-const profesoresCtrl = require("../Controllers/profesoresController");
+const profCtrl = require("../Controllers/profesoresController");
 
-/**
- * @swagger
- * /api/profesores:
- *   get:
- *     summary: Listar profesores
- *     tags: [Profesores]
- *   post:
- *     summary: Crear profesor
- *     tags: [Profesores]
- */
-router.get("/", profesoresCtrl.listar);
-router.post("/", profesoresCtrl.guardar);
+router.get("/", profCtrl.listar);
+router.post("/", profCtrl.guardar);
 
-/**
- * @swagger
- * /api/profesores/{id}:
- *   get:
- *     summary: Obtener profesor por ID
- *     tags: [Profesores]
- *   put:
- *     summary: Actualizar profesor
- *     tags: [Profesores]
- *   delete:
- *     summary: Eliminar profesor
- *     tags: [Profesores]
- */
-router.get("/:id", profesoresCtrl.mostrar);
-router.put("/:id", profesoresCtrl.actualizar);
-router.delete("/:id", profesoresCtrl.eliminar);
+router.get("/:id", profCtrl.mostrar);
+router.put("/:id", profCtrl.actualizar);
+router.delete("/:id", profCtrl.eliminar);
 
 module.exports = router;
