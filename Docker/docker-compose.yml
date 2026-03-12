@@ -10,9 +10,11 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: admin1234
-      MONGO_INITDB_DATABASE: globalonline
+      MONGO_INITDB_DATABASE: formacionglobal
     volumes:
       - mongo_data:/data/db
+      - ./MongoDB:/seed:ro
+      - ./MongoDB/init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh:ro
 
 volumes:
   mongo_data:

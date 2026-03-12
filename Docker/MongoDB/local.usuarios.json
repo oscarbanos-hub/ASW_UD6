@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "69b1a6027687a5049877bc36"
+  },
+  "nombre": "Pedro Gracía Muñoz",
+  "email": "pedro.garcia@global.es",
+  "rol": "user",
+  "passwordHash": "00000"
+},
+{
+  "_id": {
+    "$oid": "69b1a7607687a5049877bc37"
+  },
+  "nombre": "Raúl López Izquierdo",
+  "email": "raul.lopez@global.es",
+  "rol": "user",
+  "passwordHash": "00001"
+},
+{
+  "_id": {
+    "$oid": "69b1a7ab7687a5049877bc38"
+  },
+  "nombre": "Roberto Guerra Lorenzo",
+  "email": "roberto.garcia@global.es",
+  "rol": "admin",
+  "passwordHash": "00003"
+},
+{
+  "_id": {
+    "$oid": "69b1a7f37687a5049877bc39"
+  },
+  "nombre": "Iván Martín Martín",
+  "email": "ivan.martin@global.es",
+  "rol": "user",
+  "passwordHash": "00004"
+},
+{
+  "_id": {
+    "$oid": "69b1a85c7687a5049877bc3a"
+  },
+  "nombre": "José López Navas",
+  "email": "jose.lopez@global.es",
+  "rol": "user",
+  "passwordHash": "00005"
+}]

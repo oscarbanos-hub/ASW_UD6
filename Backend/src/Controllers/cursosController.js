@@ -1,92 +1,100 @@
 
 
-const comentrios = require("../models/cursos");
+const Cursos = require("../models/cursosSchema");
 
 const cursosController = {};
 
 
-cursosController.listar = async (req, res) => {            //listado cursos
+cursosController.listar = async (req, res) => {            //listado cursos con filtros
     try {
-        const cursos = await cursos.find({});
-        console.log("Mostrar el índice");
-        res.render('../views/listar', { cursos });
+        const filtro = {};
+
+        // filtro por busqueda en titulo o descripcion
+        if (req.query.busqueda) {
+            const regex = new RegExp(req.query.busqueda, "i");
+            filtro.$or = [{ titulo: regex }, { descripcion: regex }];
+        }
+
+        if (req.query.categoria) {
+            filtro.categoria = req.query.categoria;
+        }
+
+        if (req.query.nivel) {
+            filtro.nivel = req.query.nivel;
+        }
+
+        let query = Cursos.find(filtro);
+
+        if (req.query.limit) {
+            query = query.limit(parseInt(req.query.limit));
+        }
+
+        const cursos = await query;
+        console.log("Mostrar el índice de cursos");
+        res.json(cursos);
     } catch (err) {
         console.error("Error al listar cursos:", err);
-        res.status(500).send("Error al obtener los cursos");
+        res.status(500).json({ error: "Error al obtener los cursos" });
     }
 };
 
 
-cursosController.mostrar = async (req, res) => {             //mostar cursos por ID (Id de objeto de Mongo)
+cursosController.mostrar = async (req, res) => {             //mostrar curso por ID
     try {
-        const cursos = await cursos.findById(req.params.id);
-    if (!cursos) return res.status(404).send("Curso no encontrado");
-        res.render('cursos/mostrar', { cursos });
+        const curso = await Cursos.findById(req.params.id).populate("profesorID");
+        if (!curso) return res.status(404).json({ error: "Curso no encontrado" });
+        res.json(curso);
     } catch (err) {
         console.error("Error al mostrar curso:", err);
-        res.status(500).send("Error al obtener curso");
+        res.status(500).json({ error: "Error al obtener curso" });
     }
 };
 
-cursosController.crear = (req, res) => {                      //muestra formulario
-    res.render('../views/crear');
-};
 
-
-
-
-cursosController.guardar = async (req, res) => {                 // guardar nuevo de curso
+cursosController.guardar = async (req, res) => {                 // guardar nuevo curso
     try {
-        const cursos = new cursos(req.body);
-        await cursos.save();
-        console.log("El curso ha sido creado correctamente. :)");
-        res.redirect("/cursos/");
+        const curso = new Cursos(req.body);
+        await curso.save();
+        console.log("El curso ha sido creado correctamente");
+        res.status(201).json(curso);
     } catch (err) {
-        console.error("Error al guardar cursos:", err);
-        res.status(500).send("Error al guardar el curso");
+        console.error("Error al guardar curso:", err);
+        res.status(500).json({ error: "Error al guardar el curso" });
     }
 };
 
-cursosController.editar = async (req, res) => {                      //edicion  de cursos
-    try {
-        const comentario = await cursos.findById(req.params.id);
-            if (!cursos) return res.status(404).send("Curso no encontrado");
-            res.render("../views/editar", { cursos });
-    } catch (err) {
-        console.error("Error al editar curso:", err);
-        res.status(500).send("Error al obtener el curso");
-    }
-};
 
 cursosController.actualizar = async (req, res) => {                    //actualizar curso
     try {
-        const cursos = await cursos.findByIdAndUpdate(
+        const curso = await Cursos.findByIdAndUpdate(
             req.params.id,
-            { $set: { titulo: req.body.titulo, categoria: req.body.categoria, nivel : req.body.nivel, duracion: req.body.duracion,
-                descripcion: req.body.descripcion, imagen:req.body.imagen, profesorID: req.body.profesorID, temrio: req.body.temario, 
-                createdAt: req.body.createdAt, updateAt: req.body.updateAt  } },
+            { $set: { titulo: req.body.titulo, categoria: req.body.categoria, nivel: req.body.nivel, duracion: req.body.duracion,
+                descripcion: req.body.descripcion, imagen: req.body.imagen, profesorID: req.body.profesorID, temario: req.body.temario,
+                updatedAt: Date.now() } },
             { new: true, runValidators: true }
-            );
-
-        if (!cursos) return res.status(404).send("cursos no encontrado");
-        console.log("curso actualizado:", usuario);
-        res.redirect("/cursos/");
+        );
+        if (!curso) return res.status(404).json({ error: "Curso no encontrado" });
+        console.log("Curso actualizado:", curso);
+        res.json(curso);
     } catch (err) {
         console.error("Error al actualizar curso:", err);
-        res.status(500).send("Error al actualizar el cursos");
+        res.status(500).json({ error: "Error al actualizar el curso" });
     }
 };
 
 
 cursosController.eliminar = async (req, res) => {                      //Eliminar
     try {
-        const result = await cursos.deleteOne({ _id: req.params.id });
-        if (result.deletedCount === 0) return 
-            res.status(404).send("Curso no encontrado");
-            console.log("Curso eliminado");
-            res.redirect("/cursos/");
+        const result = await Cursos.deleteOne({ _id: req.params.id });
+        if (result.deletedCount === 0) {
+            return res.status(404).json({ error: "Curso no encontrado" });
+        }
+        console.log("Curso eliminado");
+        res.json({ message: "Curso eliminado correctamente" });
     } catch (err) {
         console.error("Error al eliminar curso:", err);
-        res.status(500).send("Error al eliminar el curso");
+        res.status(500).json({ error: "Error al eliminar el curso" });
     }
 };
+
+module.exports = cursosController;

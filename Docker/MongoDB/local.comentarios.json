@@ -1,0 +1,96 @@
+[{
+  "_id": {
+    "$oid": "69a9c2cb317d8a6caab0834b"
+  },
+  "usuarioID": {
+    "$oid": "69b1a6027687a5049877bc36"
+  },
+  "cursoID": {
+    "$oid": "69a9c6c8317d8a6caab0834c"
+  },
+  "comentario": "posss",
+  "puntuacion": 0,
+  "fecha": {
+    "$date": "2025-01-01T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69b13ca595ee5cda7e1d1a34"
+  },
+  "usuarioID": {
+    "$oid": "69b1a7607687a5049877bc37"
+  },
+  "cursoID": {
+    "$oid": "69b13f9f95ee5cda7e1d1a3b"
+  },
+  "comentario": "Introduccion Java",
+  "puntuacion": 3,
+  "fecha": {
+    "$date": "2001-01-01T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69b13e9a95ee5cda7e1d1a36"
+  },
+  "usuarioID": {
+    "$oid": "69b1a7ab7687a5049877bc38"
+  },
+  "cursoID": {
+    "$oid": "69b142dc95ee5cda7e1d1a3c"
+  },
+  "comentario": "Introduccion Python",
+  "puntuacion": 2,
+  "fecha": {
+    "$date": "2002-02-02T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69b13ecb95ee5cda7e1d1a37"
+  },
+  "usuarioID": {
+    "$oid": "69b1a7f37687a5049877bc39"
+  },
+  "cursoID": {
+    "$oid": "69b1441995ee5cda7e1d1a3d"
+  },
+  "comentario": "Desarrollo Web",
+  "puntuacion": 7,
+  "fecha": {
+    "$date": "2003-03-03T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69b13ef895ee5cda7e1d1a38"
+  },
+  "usuarioID": {
+    "$oid": "69b1a85c7687a5049877bc3a"
+  },
+  "cursoID": {
+    "$oid": "69b1447f95ee5cda7e1d1a3e"
+  },
+  "comentario": "Análisi de Datos",
+  "puntuacion": 8,
+  "fecha": {
+    "$date": "2004-04-04T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69b13f3895ee5cda7e1d1a39"
+  },
+  "usuarioID": {
+    "$oid": "69b1a6027687a5049877bc36"
+  },
+  "cursoID": {
+    "$oid": "69a9c6c8317d8a6caab0834c"
+  },
+  "comentario": "Introducción a la Ciberseguridad",
+  "puntuacion": 8,
+  "fecha": {
+    "$date": "2005-05-05T00:00:00.000Z"
+  }
+}]

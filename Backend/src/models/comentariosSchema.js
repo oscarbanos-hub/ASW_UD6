@@ -3,10 +3,10 @@
 const mongoose = require('mongoose');
 const comentarioSchema = new mongoose.Schema({
 
-    usuarioID: { type: String, required: true, trim: true },
-    cursoID: { type: String, required: true, trim: true },
-    comentario: { type: String, required: true, trim: false },            // no eliminar espacios 
-    puntuacion : {type: Number, requiered: true, trim: true},             // admite dos tipos de numeración   
+    usuarioID: { type: mongoose.Schema.Types.ObjectId, ref: 'Usuario', required: true },
+    cursoID: { type: mongoose.Schema.Types.ObjectId, ref: 'Cursos', required: true },
+    comentario: { type: String, required: true, trim: false },            // no eliminar espacios
+    puntuacion : {type: Number, required: true },
     fecha: { type: Date, default: Date.now }
 });
 

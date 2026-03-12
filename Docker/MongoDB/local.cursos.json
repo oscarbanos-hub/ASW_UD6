@@ -1,0 +1,105 @@
+[{
+  "_id": {
+    "$oid": "69a9c6c8317d8a6caab0834c"
+  },
+  "titulo": "C++",
+  "categoria": "Develop",
+  "nivel": "avanzado",
+  "duracion": 12,
+  "imagen": "",
+  "profesorID": {
+    "$oid": "69a9bc6e418001ea96ce7726"
+  },
+  "temario": "pesao",
+  "createdAt": {
+    "$date": "2000-12-31T23:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2000-12-31T23:00:00.000Z"
+  },
+  "descripcion": "poss eso"
+},
+{
+  "_id": {
+    "$oid": "69b13f9f95ee5cda7e1d1a3b"
+  },
+  "titulo": "Programación en Java",
+  "categoria": "Programación",
+  "nivel": "Medio",
+  "duracion": 12,
+  "imagen": "",
+  "profesorID": {
+    "$oid": "69b1471295ee5cda7e1d1a40"
+  },
+  "temario": "Jaca",
+  "createdAt": {
+    "$date": "2000-12-31T23:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2011-11-10T23:00:00.000Z"
+  },
+  "descripcion": "Programación en Java"
+},
+{
+  "_id": {
+    "$oid": "69b142dc95ee5cda7e1d1a3c"
+  },
+  "titulo": "Introducción a Python",
+  "categoria": "Programación",
+  "nivel": "Inicial",
+  "duracion": 12,
+  "descripcion": "Programación en Python",
+  "imagen": "",
+  "profesorID": {
+    "$oid": "69b1474495ee5cda7e1d1a41"
+  },
+  "temario": "Python",
+  "createdAt": {
+    "$date": "2002-02-01T23:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2002-02-01T23:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69b1441995ee5cda7e1d1a3d"
+  },
+  "titulo": "Análisis de Datos",
+  "categoria": "Negocio",
+  "nivel": "Inicial",
+  "duracion": 12,
+  "descripcion": "Introducción al análisis de datos con Python",
+  "imagen": "",
+  "profesorID": {
+    "$oid": "69b147a095ee5cda7e1d1a42"
+  },
+  "temario": "Anaconda",
+  "createdAt": {
+    "$date": "2003-03-02T23:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2002-02-01T23:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69b1447f95ee5cda7e1d1a3e"
+  },
+  "titulo": "Introducción a la Ciberseguridad",
+  "categoria": "Seguridad Informática",
+  "nivel": "Inicial",
+  "duracion": 12,
+  "descripcion": "Introducción a la Cibersegruidad con Kali",
+  "imagen": "",
+  "profesorID": {
+    "$oid": "69b147f095ee5cda7e1d1a43"
+  },
+  "temario": "Kali",
+  "createdAt": {
+    "$date": "2004-04-03T22:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2002-02-01T23:00:00.000Z"
+  }
+}]

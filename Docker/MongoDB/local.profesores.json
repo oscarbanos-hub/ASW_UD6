@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "69a9bc6e418001ea96ce7726"
+  },
+  "nombre": "Pepe Pepe Pepe",
+  "email": "beberecho@pepe.es",
+  "especialidad": "develop",
+  "foto": {}
+},
+{
+  "_id": {
+    "$oid": "69b1471295ee5cda7e1d1a40"
+  },
+  "nombre": "María Pérez Gómez",
+  "email": "maria.perez@global.es",
+  "especialidad": "Programación/Develop",
+  "foto": {}
+},
+{
+  "_id": {
+    "$oid": "69b1474495ee5cda7e1d1a41"
+  },
+  "nombre": "Juan Conde Perea",
+  "email": "juan.conde@global.es",
+  "especialidad": "Programación/Develop",
+  "foto": {}
+},
+{
+  "_id": {
+    "$oid": "69b147a095ee5cda7e1d1a42"
+  },
+  "nombre": "Isabel Arias Collado",
+  "email": "isabel.arias@global.es",
+  "especialidad": "Analista de Datos",
+  "foto": {}
+},
+{
+  "_id": {
+    "$oid": "69b147f095ee5cda7e1d1a43"
+  },
+  "nombre": "Ana Martín López",
+  "email": "ana.martin@global.es",
+  "especialidad": "Redes/Seguridad",
+  "foto": {}
+}]

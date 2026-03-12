@@ -22,6 +22,11 @@ app.get("/", (req, res) => {
   res.json({ message: "API funcionando" });
 });
 
+app.use("/api/usuarios", require("./routes/usuarioRoutes"));
+app.use("/api/cursos", require("./routes/cursosRoutes"));
+app.use("/api/profesores", require("./routes/profesoresRoutes"));
+app.use("/api/comentarios", require("./routes/comentariosRoutes"));
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en puerto ${PORT}`);
