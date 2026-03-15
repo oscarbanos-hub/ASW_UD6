@@ -4,6 +4,8 @@ const Comentario = require("../models/comentariosSchema");
 
 const comentariosController = {};
 
+const sanitizeHtml = require("sanitize-html");
+
 
 comentariosController.listar = async (req, res) => {
     try {
@@ -28,11 +30,20 @@ comentariosController.listar = async (req, res) => {
 
 comentariosController.guardar = async (req, res) => {
     try {
+
+        // Sanitizar el comentario para evitar XSS
+        if (req.body.comentario) {
+            req.body.comentario = sanitizeHtml(req.body.comentario);
+        }
+
         const datos = { ...req.body, cursoID: req.params.cursoId };
+
         const comentario = new Comentario(datos);
         await comentario.save();
+
         console.log("Comentario guardado ok");
         res.status(201).json(comentario);
+
     } catch (err) {
         console.error("Error al guardar comentario:", err);
         res.status(500).json({ error: `No se pudo guardar el comentario: ${err.message}` });

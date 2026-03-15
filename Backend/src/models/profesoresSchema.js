@@ -13,4 +13,4 @@ foto: {type: Object, required: false}
 
 });
 
-module.exports = mongoose.model('Profesor', profesoresSchema);
+module.exports = mongoose.model('Profesor', profesoresSchema, 'profesores');

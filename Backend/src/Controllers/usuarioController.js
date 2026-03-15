@@ -7,7 +7,7 @@ const usuarioController = {};
 
 usuarioController.listar = async (req, res) => {
     try {
-        const usuarios = await Usuario.find({});
+        const usuarios = await Usuario.find({}, "-passwordHash");
         res.json(usuarios);
     } catch (err) {
         console.error("Error al listar Usuarios:", err);

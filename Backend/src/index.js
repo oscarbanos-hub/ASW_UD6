@@ -4,8 +4,19 @@ const cors = require("cors");
 const connectDB = require("./config/db");
 const swaggerUi = require("swagger-ui-express");
 const swaggerSpec = require("./config/swagger");
+const session = require("express-session");
 
 const app = express();
+
+app.use(session({
+  secret: process.env.SESSION_SECRET || "globalonline_secret",
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    httpOnly: true,
+    maxAge: 1000 * 60 * 60 * 24
+  }
+}));
 
 // Middlewares
 app.use(cors());
